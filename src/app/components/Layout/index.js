@@ -32,7 +32,7 @@ const Layout = ({ filters, page, setPage, data, pageName = "mostwanted" }) => {
       >
         {filters}
       </FilterModal>
-      {screenSize.width <= 555 ? (
+      {screenSize?.width <= 555 ? (
         <div className="w-full sticky top-0 flex justify-start items-center border-b-2 border-b-gray-500  z-40 bg-inherit">
           <button
             className="flex items-center py-4"
@@ -43,8 +43,8 @@ const Layout = ({ filters, page, setPage, data, pageName = "mostwanted" }) => {
           </button>
         </div>
       ) : null}
-      <div className="flex w-full" style={{ maxWidth: 1750 }}>
-        {screenSize.width > 555 ? (
+      <div className="flex w-full pl-2" style={{ maxWidth: 1750 }}>
+        {screenSize?.width > 555 ? (
           <div className="w-48 pt-7 flex flex-col sticky top-0 self-start">
             <h2 className=" font-bold">Filters</h2>
             {filters}

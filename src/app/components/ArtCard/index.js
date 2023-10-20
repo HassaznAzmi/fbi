@@ -1,8 +1,8 @@
 import React from "react";
 
 import ImageWithFallback from "components/ImageWithFallback";
-import Tooltip from "components/Tooltip";
-import { STATUS } from "utils/constants";
+// import Tooltip from "components/Tooltip";
+// import { STATUS } from "utils/constants";
 
 import styles from "./ArtCard.module.css";
 

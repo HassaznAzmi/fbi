@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
-  if (screenSize.width > 555)
+  if (screenSize?.width > 555)
     return (
       <nav className="flex justify-center space-x-5 p-4">
         <Link
