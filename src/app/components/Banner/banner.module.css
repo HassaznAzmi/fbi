@@ -1,0 +1,25 @@
+.heroImage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../utils/images/mostwantedbanner.jpg");
+  height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artImage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../utils/images/artcrimesbanner.jpg");
+}
+
+.heroText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 10vw;
+  color: white;
+  text-shadow: 0 0 6px #000;
+}
