@@ -37,9 +37,9 @@ const PersonCard = ({ person }) => {
         </Tooltip>
       </div>
       <div className="h-16 w-full p-1 bg-red-950 rounded-b group-hover:h-auto group-hover:absolute">
-        <h3>{person?.title}</h3>
+        <h3 className={`${styles.title}`}>{person?.title}</h3>
         <p
-          className={`${styles.description}  text-sm mt-2 justify-self-end opacity-0 group-hover:opacity-100 transition-all`}
+          className={`text-sm mt-2 justify-self-end opacity-0 group-hover:opacity-100 transition-all`}
         >
           {person?.description}
         </p>

@@ -21,8 +21,6 @@ const useMostWanted = ({
     `;
   }, [personClassification, status, posterClassification, page]);
 
-  console.log(query);
-
   useEffect(() => {
     const getMostWanted = async () => {
       fetch(

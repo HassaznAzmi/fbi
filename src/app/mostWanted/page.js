@@ -1,23 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { getMostWanted } from "utils/apis";
 import PersonCard from "components/PersonCard";
-
 import Banner from "components/Banner";
-import useMostWanted from "hooks/useMostWanted";
-import { CLASSIFICATIONS, STATUS, TYPES } from "utils/constants";
-import FilterButton from "components/FilterButton";
 import Pagination from "components/Pagination";
+import FilterButton from "components/FilterButton";
+import FilterModal from "components/FilterModal";
+
+import useMostWanted from "hooks/useMostWanted";
+import useScreenSize from "hooks/useScreenSize";
+
+import { CLASSIFICATIONS, STATUS } from "utils/constants";
+import FilterIcon from "utils/images/filter";
 
 const MostWanted = () => {
-  const [personClassification, setPersonClassification] = useState();
+  const screenSize = useScreenSize();
+
+  // const [personClassification, setPersonClassification] = useState();
+  const [filterModalVisible, setFilterModalVisible] = useState(false);
   const [posterClassification, setPosterClassification] = useState();
   const [status, setStatus] = useState();
   const [page, setPage] = useState(1);
 
   const { data: mostWanted } = useMostWanted({
-    personClassification,
+    // personClassification,
     status,
     posterClassification,
     page,
@@ -25,12 +31,69 @@ const MostWanted = () => {
 
   console.log(mostWanted);
 
+  useEffect(() => {
+    if (document) {
+      document.body.style.overflow = filterModalVisible ? "hidden" : "auto";
+    }
+  }, [filterModalVisible]);
+
+  const filters = (
+    <>
+      <h3 className="mt-3">Status</h3>
+      {Object.keys(STATUS).map((st) => {
+        return (
+          <FilterButton
+            key={st}
+            filter={status}
+            setFilter={setStatus}
+            curr={st}
+          >
+            {STATUS?.[st]?.name}
+          </FilterButton>
+        );
+      })}
+
+      <h3 className="mt-3">Classifications</h3>
+      {Object.keys(CLASSIFICATIONS).map((classification) => {
+        return (
+          <FilterButton
+            key={classification}
+            filter={posterClassification}
+            setFilter={setPosterClassification}
+            curr={classification}
+          >
+            {CLASSIFICATIONS?.[classification]}
+          </FilterButton>
+        );
+      })}
+    </>
+  );
+
   return (
     <>
       <Banner />
+      <FilterModal
+        visible={filterModalVisible}
+        onClose={() => setFilterModalVisible(false)}
+      >
+        {filters}
+      </FilterModal>
+      {screenSize.width <= 555 ? (
+        <div className="w-full sticky top-0 flex justify-start items-center border-b-2 border-b-gray-500  z-40 bg-inherit">
+          <button
+            className="flex items-center py-4"
+            onClick={() => setFilterModalVisible(true)}
+          >
+            <FilterIcon />
+            <span className="ml-2">Filters</span>
+          </button>
+        </div>
+      ) : null}
       <div className="flex">
-        <div className="w-60 pt-7 flex flex-col sticky top-0 self-start">
-          <h3>Person Classification</h3>
+        {screenSize.width > 555 ? (
+          <div className="w-48 pt-7 flex flex-col sticky top-0 self-start">
+            <h2 className=" font-bold">Filters</h2>
+            {/* <h3>Person Classification</h3>
           {Object.keys(TYPES).map((type) => {
             return (
               <FilterButton
@@ -42,36 +105,11 @@ const MostWanted = () => {
                 {TYPES?.[type]}
               </FilterButton>
             );
-          })}
+          })} */}
 
-          <h3 className="mt-3">Status</h3>
-          {Object.keys(STATUS).map((st) => {
-            return (
-              <FilterButton
-                key={st}
-                filter={status}
-                setFilter={setStatus}
-                curr={st}
-              >
-                {STATUS?.[st]?.name}
-              </FilterButton>
-            );
-          })}
-
-          <h3 className="mt-3">Classifications</h3>
-          {Object.keys(CLASSIFICATIONS).map((classification) => {
-            return (
-              <FilterButton
-                key={classification}
-                filter={posterClassification}
-                setFilter={setPosterClassification}
-                curr={classification}
-              >
-                {CLASSIFICATIONS?.[classification]}
-              </FilterButton>
-            );
-          })}
-        </div>
+            {filters}
+          </div>
+        ) : null}
         {mostWanted?.items?.length === 0 ? (
           <span className="flex flex-1 justify-center p-4">
             No Persons found
