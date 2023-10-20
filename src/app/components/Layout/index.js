@@ -43,7 +43,7 @@ const Layout = ({ filters, page, setPage, data, pageName = "mostwanted" }) => {
           </button>
         </div>
       ) : null}
-      <div className="flex" style={{ maxWidth: 1750 }}>
+      <div className="flex w-full" style={{ maxWidth: 1750 }}>
         {screenSize.width > 555 ? (
           <div className="w-48 pt-7 flex flex-col sticky top-0 self-start">
             <h2 className=" font-bold">Filters</h2>

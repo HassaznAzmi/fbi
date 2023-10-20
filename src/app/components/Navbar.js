@@ -36,8 +36,8 @@ const Navbar = () => {
     );
 
   return (
-    <nav className="flex justify-start  py-4">
-      <button onClick={() => setNavModalVisible(true)}>
+    <nav className="flex justify-start  py-4 w-full">
+      <button className="pl-3" onClick={() => setNavModalVisible(true)}>
         <MenuIcon />
       </button>
       <AnimatePresence>
