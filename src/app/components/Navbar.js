@@ -59,11 +59,12 @@ const Navbar = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
+              className="my-4"
             >
               <Link
                 onClick={() => setNavModalVisible(false)}
                 href="/mostWanted"
-                className={`text-3xl my-4 ${
+                className={`text-3xl  ${
                   pathname === "/mostWanted" ? "text-red-800" : ""
                 }`}
               >

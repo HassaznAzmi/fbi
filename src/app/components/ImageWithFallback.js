@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 
 const ImageWithFallback = ({
-  fallback = "https://www.charlesrussellspeechlys.com/globalassets/configuration/fallback-images/fallback-image-person.jpg",
+  fallback = "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg",
   alt,
   src,
-  children,
   ...props
 }) => {
   const [error, setError] = useState(null);

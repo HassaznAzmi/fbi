@@ -24,3 +24,19 @@ export const TYPES = {
   Victim: "Victim",
   Accomplice: "Accomplice",
 };
+
+export const CRIME_CATEGORIES = {
+  sculpture: "Sculpture",
+  paintings: "Painting",
+  drawing: "Drawing",
+  watercolour: "Watercolor",
+  print: "Print",
+  jewelry: "Jewelry",
+  books: "Books",
+  coins: "Coins",
+  photograph: "Photos",
+  vase: "Vase",
+  dollsandfigurines: "Dolls",
+
+  other: "Other",
+};
