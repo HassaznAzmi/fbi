@@ -12,8 +12,8 @@ const FilterButton = ({ setFilter, filter, curr, children }) => {
     <button
       onClick={onSetFilter}
       className={`${
-        filter === curr && "bg-red-950"
-      } rounded hover:bg-gray-500 transition-all mt-1 border border-gray-400 p-1 text-inherit`}
+        filter === curr && "bg-red-200 dark:bg-red-950"
+      } rounded hover:bg-gray-500 transition-all mt-1 border border-gray-400 p-1`}
     >
       {children}
     </button>

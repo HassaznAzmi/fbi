@@ -53,7 +53,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className={`flex flex-col fixed  w-screen items-start  left-0 bottom-0 bg-black z-50  p-4`}
+            className={`flex flex-col fixed  w-screen items-start  left-0 bottom-0 bg-white dark:bg-black z-50  p-4`}
             style={{ height: "100dvh" }}
           >
             <button

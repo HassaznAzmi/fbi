@@ -2,7 +2,6 @@ import React from "react";
 
 const Filter = () => (
   <svg
-    fill="#fff"
     height="16px"
     width="16px"
     version="1.1"
