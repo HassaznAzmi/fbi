@@ -8,7 +8,7 @@ import styles from "./ArtCard.module.css";
 
 const ArtCard = ({ person }) => {
   return (
-    <div className="group items-center  m-2 rounded-md hover:scale-105  hover:z-10 transition-all cursor-pointer relative">
+    <div className="group items-center m-2 rounded-md hover:scale-100 sm:hover:scale-105  hover:z-10 transition-all cursor-pointer relative">
       <div className="relative">
         <ImageWithFallback
           className="rounded-t object-cover w-full h-96"
@@ -36,10 +36,10 @@ const ArtCard = ({ person }) => {
           </span>
         </Tooltip>
       </div> */}
-      <div className="h-16 w-full p-1 bg-red-200 dark:bg-red-950 rounded-b group-hover:h-auto group-hover:absolute">
+      <div className="h-16 w-full p-1 bg-red-200 dark:bg-red-950 rounded-b group-hover:h-16 sm:group-hover:h-auto sm:group-hover:absolute">
         <h3 className={`${styles.title}`}>{person?.title}</h3>
         <p
-          className={`text-sm mt-2 justify-self-end opacity-0 group-hover:opacity-100 transition-all`}
+          className={`text-sm mt-2 justify-self-end opacity-0 group-hover:opacity-100 transition-all hidden sm:block`}
         >
           {person?.description}
         </p>
