@@ -12,7 +12,7 @@ const ArtCard = ({ person }) => {
       <div className="relative">
         <ImageWithFallback
           className="rounded-t object-cover w-full h-96"
-          src={person?.images?.[0]?.original}
+          src={person?.images?.[0]?.thumb}
           alt="img"
         />
         {/* {person?.reward_max ? (

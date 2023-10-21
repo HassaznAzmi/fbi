@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +12,12 @@ const Navbar = () => {
   const screenSize = useScreenSize();
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (document) {
+      document.body.style.overflow = navModalVisible ? "hidden" : "auto";
+    }
+  }, [navModalVisible]);
 
   if (screenSize?.width > 555)
     return (
@@ -47,7 +53,8 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className={`flex flex-col fixed h-screen w-screen items-start  left-0 bottom-0 bg-black z-50  p-4`}
+            className={`flex flex-col fixed  w-screen items-start  left-0 bottom-0 bg-black z-50  p-4`}
+            style={{ height: "100dvh" }}
           >
             <button
               className="text-2xl mb-4"
