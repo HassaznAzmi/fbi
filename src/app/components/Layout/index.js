@@ -35,7 +35,7 @@ const Layout = ({ filters, page, setPage, data, pageName = "mostwanted" }) => {
       {screenSize?.width <= 555 ? (
         <div className="w-full sticky top-0 flex justify-start items-center border-b-2 border-b-gray-500  z-40 bg-inherit">
           <button
-            className="flex items-center py-4"
+            className="flex items-center py-4 pl-3"
             onClick={() => setFilterModalVisible(true)}
           >
             <FilterIcon />
