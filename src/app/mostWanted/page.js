@@ -20,8 +20,6 @@ const MostWanted = () => {
     setPage,
   });
 
-  console.log(mostWanted);
-
   const filters = (
     <>
       <h3 className="mt-3">Status</h3>

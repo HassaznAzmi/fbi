@@ -13,7 +13,7 @@ const FilterButton = ({ setFilter, filter, curr, children }) => {
       onClick={onSetFilter}
       className={`${
         filter === curr && "bg-red-950"
-      } rounded hover:bg-gray-500 transition-all mt-1 border border-gray-400 p-1`}
+      } rounded hover:bg-gray-500 transition-all mt-1 border border-gray-400 p-1 text-inherit`}
     >
       {children}
     </button>
