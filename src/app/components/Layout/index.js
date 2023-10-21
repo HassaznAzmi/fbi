@@ -11,7 +11,7 @@ import useScreenSize from "hooks/useScreenSize";
 
 import FilterIcon from "utils/images/filter";
 
-const Layout = ({ filters, page, setPage, data, pageName = "mostwanted" }) => {
+const Layout = ({ filters, page, setPage, data, pageName = "mostWanted" }) => {
   const screenSize = useScreenSize();
 
   // const [personClassification, setPersonClassification] = useState();

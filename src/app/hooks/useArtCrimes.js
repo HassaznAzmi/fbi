@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const useArtCrimes = ({ category, page }) => {
+const useArtCrimes = ({ category, page, setPage }) => {
   const [data, setData] = useState();
 
   const query = useMemo(() => {
@@ -9,6 +9,10 @@ const useArtCrimes = ({ category, page }) => {
     }
     `;
   }, [category, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [category, setPage]);
 
   useEffect(() => {
     const getArtCrimes = async () => {

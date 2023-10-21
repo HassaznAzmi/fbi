@@ -5,6 +5,7 @@ const useMostWanted = ({
   status,
   posterClassification,
   page,
+  setPage,
 }) => {
   const [data, setData] = useState();
 
@@ -20,6 +21,10 @@ const useMostWanted = ({
     }${page ? `&page=${page}` : ""}
     `;
   }, [personClassification, status, posterClassification, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [personClassification, status, posterClassification, setPage]);
 
   useEffect(() => {
     const getMostWanted = async () => {

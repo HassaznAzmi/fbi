@@ -15,6 +15,7 @@ const MostWanted = () => {
   const { data: artCrimes } = useArtCrimes({
     category,
     page,
+    setPage,
   });
 
   console.log(artCrimes);

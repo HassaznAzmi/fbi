@@ -17,6 +17,7 @@ const MostWanted = () => {
     status,
     posterClassification,
     page,
+    setPage,
   });
 
   console.log(mostWanted);
