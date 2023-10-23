@@ -13,7 +13,7 @@ const MostWanted = () => {
   const [status, setStatus] = useState();
   const [page, setPage] = useState(1);
 
-  const { data: mostWanted } = useMostWanted({
+  const { data: mostWanted, error } = useMostWanted({
     status,
     posterClassification,
     page,
@@ -53,7 +53,13 @@ const MostWanted = () => {
   );
 
   return (
-    <Layout filters={filters} page={page} setPage={setPage} data={mostWanted} />
+    <Layout
+      filters={filters}
+      page={page}
+      setPage={setPage}
+      data={mostWanted}
+      error={error}
+    />
   );
 };
 

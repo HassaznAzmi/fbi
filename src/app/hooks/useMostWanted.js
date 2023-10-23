@@ -8,6 +8,7 @@ const useMostWanted = ({
   setPage,
 }) => {
   const [data, setData] = useState();
+  const [error, setError] = useState();
 
   const query = useMemo(() => {
     return `${
@@ -32,12 +33,13 @@ const useMostWanted = ({
         `https://api.fbi.gov/@wanted?sort_on=modified&sort_order=desc${query}`
       )
         .then((res) => res.json())
-        .then((res) => setData(res));
+        .then((res) => setData(res))
+        .catch((err) => setError(err));
     };
     getMostWanted();
   }, [query]);
 
-  return { data };
+  return { data, error };
 };
 
 export default useMostWanted;

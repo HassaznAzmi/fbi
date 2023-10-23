@@ -11,7 +11,14 @@ import useScreenSize from "hooks/useScreenSize";
 
 import FilterIcon from "utils/images/filter";
 
-const Layout = ({ filters, page, setPage, data, pageName = "mostWanted" }) => {
+const Layout = ({
+  filters,
+  page,
+  setPage,
+  data,
+  error,
+  pageName = "mostWanted",
+}) => {
   const screenSize = useScreenSize();
 
   // const [personClassification, setPersonClassification] = useState();
@@ -52,10 +59,22 @@ const Layout = ({ filters, page, setPage, data, pageName = "mostWanted" }) => {
         ) : null}
         {data?.items?.length === 0 ? (
           <span className="flex flex-1 justify-center p-4">
-            No Persons found
+            No Persons found.
           </span>
         ) : (
           <div className="flex-1 flex flex-col">
+            {error ? (
+              <span className="flex flex-1 justify-center p-4">
+                Error retrieving data from{" "}
+                <a
+                  href="https://api.fbi.gov/wanted?sort_on=modified&sort_order=desc"
+                  className="ml-1 text-blue-500"
+                >
+                  API
+                </a>
+                . Please try again later.
+              </span>
+            ) : null}
             <div className="flex-1 grid p-6 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {data?.items?.map((person) => {
                 return pageName === "mostWanted" ? (

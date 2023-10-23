@@ -12,7 +12,7 @@ const MostWanted = () => {
   const [category, setCategory] = useState();
   const [page, setPage] = useState(1);
 
-  const { data: artCrimes } = useArtCrimes({
+  const { data: artCrimes, error } = useArtCrimes({
     category,
     page,
     setPage,
@@ -45,6 +45,7 @@ const MostWanted = () => {
       setPage={setPage}
       data={artCrimes}
       pageName="artCrimes"
+      error={error}
     />
   );
 };
