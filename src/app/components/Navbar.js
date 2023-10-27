@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link
           href="/mostWanted"
           className={`text-4xl ${
-            pathname === "/mostWanted" ? "text-red-800" : ""
+            pathname.includes("/mostWanted") ? "text-red-800" : ""
           }`}
         >
           Most Wanted
@@ -33,7 +33,7 @@ const Navbar = () => {
         <Link
           href="/artCrimes"
           className={`text-4xl ${
-            pathname === "/artCrimes" ? "text-red-800" : ""
+            pathname.includes("/artCrimes") ? "text-red-800" : ""
           }`}
         >
           Art Crimes
@@ -52,7 +52,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5 }}
             className={`flex flex-col fixed  w-screen items-start  left-0 bottom-0 bg-white dark:bg-black z-50  p-4`}
             style={{ height: "100dvh" }}
           >

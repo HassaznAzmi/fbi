@@ -12,6 +12,7 @@
 @media only screen and (max-width: 600px) {
   .heroImage {
     background-attachment: inherit;
+    height: 150px;
   }
 }
 

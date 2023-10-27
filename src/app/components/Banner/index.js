@@ -1,13 +1,19 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styles from "./banner.module.css";
 
 const Banner = ({ artImage }) => {
   return (
-    <div className={`${styles.heroImage} ${artImage ? styles.artImage : ""}`}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className={`${styles.heroImage} ${artImage ? styles.artImage : ""}`}
+    >
       <div className={styles.heroText}>
         {artImage ? "ART CRIMES" : "MOST WANTED"}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
