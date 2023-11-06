@@ -72,7 +72,7 @@ const Navbar = () => {
                 onClick={() => setNavModalVisible(false)}
                 href="/mostWanted"
                 className={`text-3xl  ${
-                  pathname === "/mostWanted" ? "text-red-800" : ""
+                  pathname.includes("/mostWanted") ? "text-red-800" : ""
                 }`}
               >
                 Most Wanted
@@ -87,7 +87,7 @@ const Navbar = () => {
                 onClick={() => setNavModalVisible(false)}
                 href="/artCrimes"
                 className={`text-3xl ${
-                  pathname === "/artCrimes" ? "text-red-800" : ""
+                  pathname.includes("/artCrimes") ? "text-red-800" : ""
                 }`}
               >
                 Art Crimes

@@ -18,8 +18,6 @@ const MostWanted = () => {
     setPage,
   });
 
-  console.log(artCrimes);
-
   const filters = (
     <>
       <h3 className="mt-3">Categories</h3>
